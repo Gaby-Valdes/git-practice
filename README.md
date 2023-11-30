@@ -5,35 +5,65 @@ Il s'avère qu'aujourd'hui, l'outil le plus utilisé est git.
 
 Voici quelques exercices permettant de découvrir quelques subtilisés de git.
 
+Ces exercices sont à réaliser en bi/trinômes 
+
 ## Exercice N°1
 
-> Le but de cet exercice est de découvrir les conflits de merge. 
+> Le but de cet exercice est de découvrir git et les origines des conflits de merge. 
 
 A réaliser en binômes. 
 Après avoir forké ce dépôt, définissez votre dépôt en privé et attribuez à votre binôme les droits afin de contribuer ensemble au sein de ce dépôt. 
 Clonez ce dépôts sur vos machines respectives. 
+```sh
+git clone git@gitlab.com:your-repo-path/git.git
+```
+Il se peut que vous n'ayez pas de clé ssh. 
+Pour ce faire, vous avez l'outil ssh-keygen qui peut vous aider, et vous génèrera deux clés ssh. 
+```sh
+# En sein de bash, en ligne de commande, 
+# lister les fichiers et dossiers du répertoire .ssh au sein du dossier $HOME 
+ls ~/.ssh
+```
 
 Sur chaque machine, modifiez le fichier `README.md` afin d'y ajouter vos propres messages. 
-Assurez-vous de bien travailler en même temps sur le fichier et d'y saisir des informations différentes. L'objectif étant que vous vous retrouviez à modifier simultanément les mêmes lignes d'un fichier. 
+Dans un premier temps, ajoutez des messages et faites des commits.
+```sh
+git add README.md
+git commit -m "updating readme"
+```
+Constatez en temps réel l'évolution du dépôt distant et du votre en local. 
+Mettez à jour le dépôt distant avec un 
+```sh
+git push
+git pull
+```
+Vous pouvez également ajouter des nouveaux fichiers. 
+N'hésitez pas à ouvrir le dossier avec un explorateur de fichiers pour le voir évoluer en temps réel. 
+
+> Mettez vos deux projets locaux à jour. 
+
+Puis, chacun sur le meme fichier, sur la/les mêmes lignes saisissez des informations différentes. 
 
 Puis, une fois satisfaits, réalisez un `git add` puis `git commit` puis un `git push`.
 La première personne à envoyer le code ne devrait pas avoir de problème, le second oui. Résolvez ensemble le conflit de merge par le biais de la ligne de commande.
 
+Reproduisez le même scénario en utilisant votre IDE (visual studio code par ex). 
+
 ## Exercice N°2
 
-> Découverte de ce qui ne génère pas de conflit
+> Tester les limites de git
 
 Toujours au sein du même dépôt, et toujours en binômes. 
 Ajoutez simultanément un fichier ayant le même nom, "fichier1.txt" au sein du dossier. Laissez tous les deux ce fichier vide.
 Puis, une fois satisfaits, réalisez un `git add` puis `git commit` puis un `git push`.
-Vous ne devriez pas rencontrer de problème.
+Est-ce que cela a généré un conflit ?
 
 Ajoutez simultanément un fichier ayant le même nom, "fichier2.txt" au sein du dossier. Ecrivez tous les deux le même texte dans le fichier.
 Puis, une fois satisfaits, réalisez un `git add` puis `git commit` puis un `git push`.
-Vous ne devriez pas rencontrer de problème.
+Est-ce que cela a généré un conflit ?
 
 Il vous est possible de continuer à voir le travail en collaboration par le biais de `git log`. 
-Vous avez aussi probablement une vue intéressant au sein de votre IDE .
+Vous avez aussi probablement une vue intéressant au sein de votre IDE . N'existerait-il pas un plugin sympa pour la visualisation de l'historique ?
 
 ## Exercice 3
 
@@ -75,7 +105,7 @@ A
 B
 ```
 Réalisez vos push pull habituels et observez le résultat.
-Git lui-même s'emmêle un peu les pinceaux, et en fonction de ce que vous avez avez réalisé précisément, git peut même ne pas détecter d'incohérence et ne pas générer de conflit de merge.
+Il est probable que Git lui-même s'emmêle un peu les pinceaux, et en fonction de ce que vous avez avez réalisé précisément, git peut même ne pas détecter d'incohérence et ne pas générer de conflit de merge.
 Vous trouverez une explication [ici](https://pijul.org/manual/why_pijul.html).
 
 
@@ -141,7 +171,7 @@ Déplacer la branche actuelle afin d'intégrer les derniers commits de la branch
 Dans un contexte professionnel, le travail est souvent scindé en petites taches. Et il est d'usage de créer une branche par tache. 
 A partir de votre dépôt actuel, je vous demande de créer une tache "Générer une page phpinfo". 
 Les instructions à réaliser sont donc :
- - Créez une branche `feature-phpinfo`
+ - Créez une branche `features/phpinfo`
  - Travaillez dans cette branche et créez le fichier: `echo "<?php phpinfo()" > index.php`
  - Réalisez votre commit. 
 
@@ -152,6 +182,8 @@ Les instructions à réaliser sont donc :
 
  Fusionnez votre branche dans la branche main. 
  N'oubliez pas, votre IDE et `git status` peuvent beaucoup vous servir pour visualiser ce qui se trame dans git. 
+
+Pourquoi pas réaliser un `php -S localhost:` pour voir ce que fait ce fichier :)
 
 ## Exercice 7
 > git log en ligne de commande
