@@ -15,30 +15,43 @@ A réaliser en binômes.
 Après avoir forké ce dépôt, définissez votre dépôt en privé et attribuez à votre binôme les droits afin de contribuer ensemble au sein de ce dépôt. 
 Clonez ce dépôts sur vos machines respectives. 
 ```sh
-git clone git@gitlab.com:your-repo-path/git.git
+git clone git@github.com:...git
+# OU git clone https://github.com/...git
 ```
-Il se peut que vous n'ayez pas de clé ssh. 
+Si vous clonez par le biais de la première URL précisée ci-dessus, il se peut que vous n'ayez pas de clé ssh. 
 Pour ce faire, vous avez l'outil ssh-keygen qui peut vous aider, et vous génèrera deux clés ssh. 
 ```sh
 # En sein de bash, en ligne de commande, 
 # lister les fichiers et dossiers du répertoire .ssh au sein du dossier $HOME 
 ls ~/.ssh
+# ssh-keygen permets de générer une clé ssh
+# Vous devrez associer votre clé publique ( probablement le fichier ~/.ssh/id_rsa.pub) au sein de github : https://github.com/settings/keys
 ```
 
+Une fois qu'avec votre binôme vous êtes parvenu(e)s à cloner vos dépôts, vous devez pouvoir accéder au fichiers téléchargés.
 Sur chaque machine, modifiez le fichier `README.md` afin d'y ajouter vos propres messages. 
-Dans un premier temps, ajoutez des messages et faites des commits.
+Les textes que vous devez ajouter ici importent peu, il s'agit simplement de voir comment git réagit aux commits (sauvegardes ).
+
+Donc,dans un premier temps, ajoutez des messages et faites des commits.
 ```sh
+# Faites votre modification puis
 git add README.md
 git commit -m "updating readme"
 ```
-Constatez en temps réel l'évolution du dépôt distant et du votre en local. 
+Constatez en temps réel l'évolution du dépôt distant et du votre en local. Pour le moment rien n'a été fait. 
+Par contre votre fichier a bien été modifié en local, et vous pouvez avoir l'historique par le biais des instructions `git log` et `git status`.
+
 Mettez à jour le dépôt distant avec un 
 ```sh
 git push
+# Le dépôt en ligne est maintenant actualisé. 
+# Votre binôme n'a pas la modification en local sur son ordinateur
+# SI votre binôme fait un pull, il l'aura. 
 git pull
 ```
 Vous pouvez également ajouter des nouveaux fichiers. 
 N'hésitez pas à ouvrir le dossier avec un explorateur de fichiers pour le voir évoluer en temps réel. 
+Faites cette manipulation à tour de rôle pour bien vous approprier les différentes étapes : add, commit, push, pull...
 
 > Mettez vos deux projets locaux à jour. 
 
@@ -129,6 +142,7 @@ puis
 Et l'appliquer en réalisant `git stash pop` ou encore `git stash apply`. 
 Quelle est la différence entre ces deux méthodes ?
 
+<!-- >
 ## Exercice 5
 
 > La gestion du squash
@@ -239,3 +253,5 @@ git remote add hello-world ../bare-repository.git
 ```
 
 Ce qui peut vous servir de backup ou permettre de stocker vos dépôts ailleurs que chez gitlab, github, framagit, bitbucket ...
+
+-->
