@@ -7,7 +7,7 @@ Voici quelques exercices permettant de découvrir quelques subtilisés de git.
 
 Ces exercices sont à réaliser en bi/trinômes 
 
-## Exercice N°1----------------------------
+## Exercice N°1-------------------------
 
 > Le but de cet exercice est de découvrir git et les origines des conflits de merge. 
 
