@@ -9,6 +9,9 @@ Ces exercices sont à réaliser en bi/trinômes
 
 ## Exercice N°1-------------------------
 
+@@@@@efefdd
+
+
 > Le but de cet exercice est de découvrir git et les origines des conflits de merge. 
 
 A réaliser en binômes. 
@@ -32,8 +35,10 @@ Une fois qu'avec votre binôme vous êtes parvenu(e)s à cloner vos dépôts, vo
 Sur chaque machine, modifiez le fichier `README.md` afin d'y ajouter vos propres messages. 
 Les textes que vous devez ajouter ici importent peu, il s'agit simplement de voir comment git réagit aux commits (sauvegardes ).
 
+defe
+
 Donc,dans un premier temps, ajoutez des messages et faites des commits.
-```sh
+```sh dezedezsede
 # Faites votre modification puis
 git add README.md
 git commit -m "updating readme"
